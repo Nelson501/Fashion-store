@@ -1,0 +1,45 @@
+
+@import "tailwindcss";
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-image: linear-gradient(to bottom right, teal, teal);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+@layer utilities {
+    @keyframes loading {
+        0%{
+            transform: translate(-100%);
+        }
+        100% {
+            transform: translate(150%);
+        }       
+    }
+    .aminate-loading{
+        animation: loading 0.8s ease infinite;
+    }
+}
+
+@layer utilities {
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    .aminate-blink {
+        animation: blink 3.8s step-end infinite;
+    }
+}
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
