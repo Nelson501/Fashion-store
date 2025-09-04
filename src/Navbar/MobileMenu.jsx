@@ -7,9 +7,14 @@ import INSTAGRAM from "../assets/instagram.svg"
 
 
 export const MobileMenu = ({ isOpen, setIsOpen }) => {
-  return (
-    <div
-      className={`absolute w-full top-0 z-40 flex flex-col md:hidden justify-center items-center transition-all duration-300 ease-in-out bg-black/95 
+  const socials = [
+    { href: "#", src: FACEBOOK, alt: "facebook"},
+    { href: "#", src: LINKEDIN, alt: "linkedIn"},
+    {href: "#", src: INSTAGRAM, alt: "instagram"}
+  ]
+
+  return <div
+      className={` absolute w-full top-0 z-40 flex flex-col md:hidden justify-center items-center transition-all duration-300 ease-in-out bg-black/95 
         ${isOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"}`}
     >
       {/* Close Button */}
@@ -22,26 +27,56 @@ export const MobileMenu = ({ isOpen, setIsOpen }) => {
       </button>
 
       {/* Links */}
-      <div className="absolute flex flex-col justify-center items-center top-[6rem]">
-        {["home", "about", "gallery", "contact"].map((section) => (
-          <a
-            key={section}
-            onClick={() => setIsOpen(false)}
-            href={`#${section}`}
-            className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300 
-              ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-          >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
+      <div className="flex flex-col gap-10">
+
+        <a className={` text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
+        ${
+          isOpen ? "opacity-100 translate-y-0"
+           : "opacity-0 translate-y-5"
+        }`}
+        onClick={()=>setIsOpen(false)}
+        href="#home">
+          Home
+        </a>
+        <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
+        ${
+          isOpen ? "opacity-100 translate-y-0" 
+          : "opacity-0 tarnslate-y-5"
+        }`}
+        onClick={()=>setIsOpen(false)}
+        href="#about">
+            About
+        </a>
+        <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
+        ${
+          isOpen ? "opacity-100 translate-y-0" 
+          : "opacity-0 tarnslate-y-5"
+        }`}
+        onClick={()=>setIsOpen(false)}
+        href="#gallery">
+            Gallery
+        </a>
+        <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
+        ${
+          isOpen ? "opacity-100 translate-y-0" 
+          : "opacity-0 tarnslate-y-5"
+        }`}
+        onClick={()=>setIsOpen(false)}
+        href="#contact">
+            Contact
+        </a>
+
+      </div>
+
+      <div className="flex justify-center items-center space-x-3 mt-8">
+        {socials.map((social,index) => (
+          <a key={index} href={social.href} target="_blank" rel="noopener noreferrer">
+            <img src={social.src} alt={social.alt} className="w-6 h-6" />
           </a>
         ))}
-        <div className="flex justify-center items-center space-x-3">
-          <a href="#"><img src={FACEBOOK} alt="facebook" /></a>
-          <a href="#"><img src={INSTAGRAM} alt="facebook" /></a>
-          <a href="#"><img src={LINKEDIN} alt="facebook" /></a>
-        </div>
+      </div>
         
       </div>
-    </div>
-  );
+  
 };
 
