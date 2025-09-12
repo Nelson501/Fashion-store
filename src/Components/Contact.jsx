@@ -18,7 +18,7 @@ export const Contact = ()=>{
             <div className="flex flex-col justify-center items-center pb-10">
                 <h1 className="text-center text-3xl font-serif pb-4">Contacts</h1>
                 <p className=" rounded-md text-center items-center text-xl
-                pb-10 bg-slate-900 text-white/40 p-4">You are Welcome here to buy designer clothes or make any alterations</p>
+                pb-10 bg-slate-900 text-white p-4">You are Welcome here to buy designer clothes or make any alterations</p>
             </div>
             <form action="http://formsubmit.co/sunnynax01@gmail.com" method="POST" className=" w-full space-y-6 p-4 rounded-2xl text-slate-400">
                 <p className="text-black">Fill out the form and come to uur store. Together, we'll find a perfect style for you.</p>
@@ -38,7 +38,7 @@ export const Contact = ()=>{
             </form>
         </div>
         <footer className="bg-gray-900 p-4 w-full text-white flex flex-col justify-center items-center border-t-2 border-slate-900 rounded-t-md">
-            <p className='font-serif italic text-xl'>&copy; 2025 Nelson Dayo | Fashion that speaks your style</p>
+            <p className='font-serif italic text-xl'>&copy; 2025 Fashion Home | Fashion that speaks your style</p>
             <div className="flex gap-10 justify-center items-center pt-10">
                 <p>Follow Us:</p>
                 <div className="flex space-x-1 text-center text-white ">

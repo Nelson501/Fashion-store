@@ -10,7 +10,7 @@ export const Services = ()=>{
     className="flex flex-col justify-center items center bg-red-800">
         <div className="flex flex-col justify-center items-center p-[4rem]">
             <div className="flex flex-col justify-center items-center">
-                <p className="text-center text-3xl font-semibold font-serif pb-8">Nelson Dayo Services &copy;</p>
+                <p className="text-center text-3xl font-semibold font-serif pb-8">Fashion Home Services &copy;</p>
                 <p>We offer various clothing and shoes services for women and men in Nigeria</p>
             </div>
             <div className="grid grid-cols-1 lg:flex pt-10 gap-10 justify-center items-center">
@@ -30,8 +30,8 @@ export const Services = ()=>{
         </div>
         <div className="flex flex-col bg-black/95 items-center min-h-screen">
             <div className="flex flex-col gap-4 justify-center items-center p-10">
-                <h2 className="text-center text-2xl">How to Buy MELANI Clothes</h2>
-                <p className="text-center text-md">We have a large showroom near the city center, and from April 1 the second MELANI boutique will open</p>
+                <h2 className="text-center text-2xl">How to Buy Fashion Home Clothes?</h2>
+                <p className="text-center text-md">We have a large showroom near the city center, and from April 1 the second Fashion Home boutique will open</p>
             
             </div>
             <div className="grid grid-cols-1 lg:flex justify-center items-center p-[3rem] gap-12">
@@ -62,6 +62,35 @@ export const Services = ()=>{
                 
             </div>
        
+        </div>
+
+        {/* weekly schedule */}
+        <div className='flex flex-col justify-center items-center p-10'>
+            <div className='text-center pt-6'>
+                <h1 className='text-center text-2xl font-serif'>Fashion Home Online Available 24 Hours Everyday &copy;</h1>
+            </div>
+
+            <div className='pt-[3rem] text-2xl space-y-6'>
+                <h1 className='text-center font-mono'>Fashion Home Opening Hours</h1>
+                <div className='space-y-4'>
+                    <p className=''>
+                        <strong className='mr-4'>
+                            Mon - Fri:
+                        </strong>
+                        9:00 AM - 10:00 PM
+                    </p>
+                    <p>
+                        <strong className='mr-4'>Saturday:</strong>
+                        10 : 0 AM - 8: 00 PM
+                    </p>
+                    <p>
+                        <strong className='mr-4'>Sunday:</strong>
+                        Closed
+                    </p>
+
+                </div>
+            </div>
+
         </div>
     </section>
 }

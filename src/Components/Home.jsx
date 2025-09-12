@@ -6,7 +6,7 @@ export const Home = ()=> {
             <div className="flex flex-col text-center justify-center items-center mt-[4rem] p-5">
             <p className="text-[1.3rem] text-red-700">Looking for somethoing special?</p>
             <p className="text-[1.8rem] lg:text-[2rem] text-center mt-[2rem] text-black font-bold ">Feel the spirit of the city in <br /> bold and functional outfits</p>
-            <p className=" text-slate-900 p-6 shadow-sm text-md shadow-slate-400 font-mono italic mt-4 rounded-2xl">NELSON fashoin boutique is a great place to give yourself a new look. <br /> We create exclusive outfits  fro men and women, as well as shoes. <br /> We can execute even the most unpreditable ideals!</p>
+            <p className=" text-slate-900 p-6 shadow-sm text-md shadow-slate-400 font-mono italic mt-4 rounded-2xl"> <span className="font-semibold">FASHION </span><span className="text-amber-900 font-semibold">HOME</span> boutique is a great place to give yourself a new look. <br /> We create exclusive outfits  fro men and women, as well as shoes. <br /> We can execute even the most unpreditable ideals!</p>
             <div className="flex flex-col md:flex-row mt-6 gap-6">
                 <div className="bg-red-600 transition relative hover:translate-y-1 hover:bg-red-500 p-4 rounded-xl text-center">
                     Make an Appointment
