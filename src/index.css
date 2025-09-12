@@ -6,7 +6,8 @@ body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    background-image: linear-gradient(to bottom right, teal, teal);
+    background-color: white;
+    /* background-image: linear-gradient(to bottom right, teal, teal); */
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

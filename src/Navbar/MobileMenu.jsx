@@ -1,8 +1,8 @@
 
 import { IoCloseSharp } from "react-icons/io5";
-import FACEBOOK from "../assets/facebook.svg"
-import LINKEDIN from "../assets/linkedin.svg"
-import INSTAGRAM from "../assets/instagram.svg"
+import FACEBOOK from "../assets/media/facebook.svg"
+import LINKEDIN from "../assets/media/linkedin.svg"
+import INSTAGRAM from "../assets/media/instagram.svg"
 
 
 
@@ -35,7 +35,7 @@ export const MobileMenu = ({ isOpen, setIsOpen }) => {
            : "opacity-0 translate-y-5"
         }`}
         onClick={()=>setIsOpen(false)}
-        href="#home">
+        href="home">
           Home
         </a>
         <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
@@ -55,6 +55,15 @@ export const MobileMenu = ({ isOpen, setIsOpen }) => {
         onClick={()=>setIsOpen(false)}
         href="#gallery">
             Gallery
+        </a>
+        <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
+        ${
+          isOpen ? "opacity-100 translate-y-0" 
+          : "opacity-0 tarnslate-y-5"
+        }`}
+        onClick={()=>setIsOpen(false)}
+        href="#services">
+            Services
         </a>
         <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
         ${

@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { Navbar } from "./Navbar"
 import { MobileMenu } from "./Navbar/MobileMenu"
-import { LoadingAmination } from "./Components/LoadingAmination"
+// import { LoadingAmination } from "./Components/LoadingAmination"
 import { Home } from "./Components/Home"
 import { About } from "./Components/About"
+import { Gallery } from "./Components/Gallery"
 import { Contact } from "./Components/Contact"
+import { Services } from "./Components/Services"
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
     <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen}/>
     <Home/>
     <About/>
+    <Gallery/>
+    <Services/>
     <Contact/>
       
   </div>
