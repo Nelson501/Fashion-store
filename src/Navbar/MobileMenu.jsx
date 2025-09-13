@@ -35,7 +35,7 @@ export const MobileMenu = ({ isOpen, setIsOpen }) => {
            : "opacity-0 translate-y-5"
         }`}
         onClick={()=>setIsOpen(false)}
-        href="home">
+        href="#home">
           Home
         </a>
         <a className={`text-white hover:text-xl transition-all cursor-pointer font-bold text-lg
