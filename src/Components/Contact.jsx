@@ -21,7 +21,7 @@ export const Contact = ()=>{
                 pb-10 bg-slate-900 text-white p-4">You are Welcome here to buy designer clothes or make any alterations</p>
             </div>
             <form action="http://formsubmit.co/sunnynax01@gmail.com" method="POST" className=" w-full space-y-6 p-4 rounded-2xl text-slate-400">
-                <p className="text-black">Fill out the form and come to uur store. Together, we'll find a perfect style for you.</p>
+                <p className="text-black">Fill out the form and come to our store. Together, we'll find a perfect style for you.</p>
                 <div className="relative tex-white">
                     <input type="name" name="name" id="name" required placeholder="Enter Your Full Name" className="w-full bg-slate-300/10 border-2 border-slate-400 rounded px-4 py-3 transition focus:outline-none focus:bg-slate-700/5"/>
                 </div>

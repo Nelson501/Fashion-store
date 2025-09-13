@@ -55,8 +55,8 @@ export const Services = ()=>{
                 <div className="flex flex-col justify-center items-center max-w-[25rem] text-white p-10 rounded-[20px] shadow-red-500 bg-black shadow-sm">
                     <div className=''><img className='flex justify-center items-center border-2 bg-red-800 rounded-[50%] w-[60px]' src={CARD1} alt="" width={50}/></div>
                     <div className="flex flex-col justify-center items-center pt-8">
-                        <h2 className="text-center text-2xl font-mono pb-3">Make a Purshace</h2>
-                        <p className="text-center">If you orderd bespoke tailoring, your oreder will be ready in 5-15 days. You may be asked to come for the fit check 1 tor 2 times.</p>
+                        <h2 className="text-center text-2xl font-mono pb-3">Make a Purchase</h2>
+                        <p className="text-center">If you ordered bespoke tailoring, your order will be ready in 5-15 days. You may be asked to come for the fit check 1 to 2 times.</p>
                     </div>
                 </div>
                 
@@ -70,7 +70,7 @@ export const Services = ()=>{
                 <h1 className='text-center text-2xl font-serif'>Fashion Home Online Available 24 Hours Everyday &copy;</h1>
             </div>
 
-            <div className='pt-[3rem] text-2xl space-y-6'>
+            <div className='flex flex-col justify-center items-center pt-[3rem] text-2xl space-y-6 pl-2'>
                 <h1 className='text-center font-mono'>Fashion Home Opening Hours</h1>
                 <div className='space-y-4'>
                     <p className=''>
