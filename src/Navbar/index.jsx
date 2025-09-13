@@ -20,7 +20,7 @@ export const Navbar = ({isOpen, setIsOpen})=>{
 
         <div className=" flex items-center space-x-[20px] sm:space-x-[30px]">
             <div className="hidden md:flex items-center space-x-[20px] sm:space-x-[30px]">
-                <a className="text-gray-300 hover:text-white hover:text-xl font-serif transition-all hover:translate-y-1 cursor-pointer font-bold text-lg hover:italic p-2 rounded-2xl" href="home">
+                <a className="text-gray-300 hover:text-white hover:text-xl font-serif transition-all hover:translate-y-1 cursor-pointer font-bold text-lg hover:italic p-2 rounded-2xl" href="#home">
                     Home
                 </a>
                 <a className="text-gray-300 hover:text-white hover:text-xl transition-all hover:translate-y-1 cursor-pointer font-bold font-serif hover:italic  p-2 rounded-2xl text-lg" href="#about">
