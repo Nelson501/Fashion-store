@@ -70,7 +70,7 @@ export const Services = ()=>{
                 <h1 className='text-center text-2xl font-serif'>Fashion Home Online Available 24 Hours Everyday &copy;</h1>
             </div>
 
-            <div className='flex flex-col justify-center items-center pt-[3rem] text-xl md:text-2xl space-y-6 pl-2'>
+            <div className='flex flex-col justify-center items-center pt-[3rem] text-lg md:text-2xl space-y-6 pl-2'>
                 <h1 className='text-center font-mono'>Fashion Home Opening Hours</h1>
                 <div className='space-y-4'>
                     <p className=''>
