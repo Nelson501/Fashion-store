@@ -8,7 +8,7 @@ export const Navbar = ({isOpen, setIsOpen})=>{
 
     return<nav className="flex flex-row top-0 fixed z-40 bg-black/95 border-b-2 backdrop-blur-sm border-slate-300 shawdow-lg w-full py-4 justify-between px-10">
         <div className="flex flex-row text-center uppercase font-serif italic font-bold text-[20px]">
-            <a className="cursor-pointer" href="home">Fashion<span className="ml-1 text-amber-900 font-bold">Home</span></a>
+            <a className="cursor-pointer" href="#home">Fashion<span className="ml-1 text-amber-900 font-bold">Home</span></a>
         </div>
         
         {
