@@ -4,7 +4,7 @@ export const Home = ()=> {
     return <section
     id="home"
     className="flex flex-col justify-center items-center">
-        <div className="flex flex-col-reverse justify-between  lg:flex-row gap-10 lg:gap-15 px-[5rem] mt-[4rem] lg:mt-[2rem] pb-6 pt-10">
+        <div className="flex flex-col-reverse justify-between  lg:flex-row gap-10 lg:gap-15 px-[3.5rem] mt-[4rem] lg:mt-[2rem] pb-6 pt-10">
             <div className="flex flex-col text-center justify-center items-center mt-[4rem] p-5">
             <p className="text-[1.3rem] text-red-700">Looking for somethoing special?</p>
             <p className="text-[1.8rem] lg:text-[2rem] text-center mt-[2rem] text-black font-bold ">Feel the spirit of the city in <br /> bold and functional outfits</p>

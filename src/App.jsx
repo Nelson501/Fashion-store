@@ -13,7 +13,7 @@ function App() {
   const[isLoading, setIsLoading] = useState(false)
   const[isOpen, setIsOpen] = useState(false)
 
-  return<div className="flex flex-col gap[1rem]">
+  return<div className="flex flex-col gap[0.5rem]">
     {/* {isLoading && <LoadingAmination onComplete={()=>setIsLoading(true)} />} */}
 
     <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />

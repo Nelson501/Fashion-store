@@ -14,7 +14,7 @@ export const MobileMenu = ({ isOpen, setIsOpen }) => {
   ]
 
   return <div
-      className={` absolute w-full top-0 z-40 flex flex-col md:hidden justify-center items-center transition-all duration-300 ease-in-out bg-black/95 
+      className={`w-full top-0 sticky z-40 flex flex-col md:hidden justify-center items-center transition-all duration-300 ease-in-out bg-black/95 
         ${isOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"}`}
     >
       {/* Close Button */}
