@@ -1,88 +1,193 @@
-import NELSS from '../assets/img/pic3.jpg'
-import BESPOKE from '../assets/media/web-awesome.svg'
-import FABRICS from '../assets/media/tornado.svg'
-import UNIQUE from '../assets/media/globe.svg'
+import { motion } from "framer-motion";
+import NELSS from "../assets/img/pic3.jpg";
+import BESPOKE from "../assets/media/web-awesome.svg";
+import FABRICS from "../assets/media/tornado.svg";
+import UNIQUE from "../assets/media/globe.svg";
 
-export const About = ()=>{
-    return <section id="about" className="flex flex-col justify-center items-center">
-        <div className='grid grid-cols-1 lg:flex justify-center text-black items-center bg-slate-200'>
-            <div className="flex justify-center items-center w-full ">
-            <div className='flex flex-col justify-center items-center text-white bg-red-700 min-h-screen'>
-                <h1 className='flex text-start text-4xl font-mono font-semibold italic p-4 '> About US </h1>
-                <p className='text-start px-[4rem] text-xl'> Welcome to Fashion Home, your ultimate destination for style, trends and self-expression. We believe fashion is more than just clothing it's a lifestyle, a statemet, and a way to showcase individuality. Our mission is to make fashion acccessible, inspiring and tailored to your unique taste.</p>
-                <p className='text-start px-[4rem] text-xl pb-6'>At Fashion Home, we bring together creativity and technology to deliver a seamless fashion experience. whether you your're looking for the latest trends, timeless classics, or personalized recommendations, we've designed this platform to help you explore, discover and express your style with confidence &copy; </p>
-            </div>
-            <div className='hidden lg:flex text-center items-center relative right-20 tracking-[2rem] rotate-90'>
-                <h1 className='italic font-extrabold text-red-700 bg-clip-text flex text-start text-[80px]'>About</h1>
-            </div>           
-        </div>
-        <div className=' hidden lg:flex min-h-screen' >
-            <img className='min-h-screen h-full' src={NELSS} alt="image" width={500} />
-        </div>
-        
-        </div>
-        <div className='flex flex-col justify-center items-center bg-black/90'>
-            <div className='flex flex-col justify-center items-center py-10 px-20'>
-                <div className='flex flex-col justify-center items-center pb-10'>
-                    <h1 className='text-center text-4xl font-semibold pb-4'>How Are We Different?</h1>
-                    <p className='text-center italic tracking-wider'>There Are hundreds of fashion designers and ateliers in Nigeria, so why should you use our <br /> services and clothes? Here is why &copy;
-                    </p>
-                </div>
+const slideLeft = {
+  hidden: { opacity: 0, x: 100 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
 
-                <div className='grid grid-cols-1 lg:flex justify-center items-center pt-12 space-x-15'>
-                    {/* first card */}
-                    <div className='flex flex-col justify-center space-y-6 pt-8'>
-                        <div className='pb-10'><img className=' bg-white rounded-[50%]' src={BESPOKE} alt="photo"  width={50}/></div>
-                        <div className='' >
-                            <h2 className='text-2xl pb-4'>Bespoke Atelier</h2>
-                            <p>We create unique outfits and alterations. We can hem your jeans or create an evening gown from scratch</p>
-                        </div>
-                        <div className='pt-4'>
-                            <ul className='list-disc list-item'>
-                                <li>Any alterations</li>
-                                <li>Made-to-measure</li>
-                                <li>Restoration services</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
+const slideRight = {
+  hidden: { opacity: 0, x: -100 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
 
-                    {/* second card */}
-                    <div className='flex flex-col justify-center space-y-6 pt-8'>
-                        <div className='pb-4'><img className='bg-white rounded-[50%]' src={FABRICS} alt="photo" width={50} /></div>
-                        <div>
-                            <h2 className='text-2xl pb-4'>Best Fabrics</h2>
-                            <p>We make bespoke clothes and items for our collectios only from the best natural fabrics from italy</p>
-                        </div>
-                        <div className='pt-4'>
-                            <ul className='list-disc list-item'>
-                                <li>100% organic cotton</li>
-                                <li>Suede and skin</li>
-                                <li>Exclusive patterns</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
-                    {/* third card */}
-                    <div className='flex flex-col justify-center space-y-6 pt-8'>
-                        <div className='pb-10'><img className=' bg-white rounded-[50%]' src={UNIQUE} alt="photo" width={50} /></div>
-                        <div>
-                            <h2 className='pb-4 text-2xl'>Unique collections</h2>
-                            <p>Each item of our collection is presented only in 1 copy in each size. You are unlikely to meet a person in the same clothes.</p>
-                        </div>
-                        <div className='pt-4'>
-                            <ul className='list-disc list-item'>
-                                <li>Clothes, shoes and accessories</li>
-                                <li>Street style and casual</li>
-                                <li>Mix-and-match</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
+export const About = () => {
+  return (
+    <section id="about" className="flex flex-col items-center">
+
+      {/* ================= TOP SECTION ================= */}
+      <div className="grid lg:grid-cols-2 w-full bg-slate-200">
+
+        {/* TEXT SIDE */}
+        <motion.div
+          variants={slideRight}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="flex flex-col justify-center bg-red-700 text-white min-h-screen px-10 lg:px-20"
+        >
+          <h1 className="text-4xl font-semibold italic mb-6">
+            About Us
+          </h1>
+
+          <p className="text-lg mb-6">
+            Welcome to Fashion Home, your ultimate destination for style,
+            trends, and self-expression. We believe fashion is more than just
+            clothing — it's a lifestyle, a statement, and a way to showcase
+            individuality.
+          </p>
+
+          <p className="text-lg">
+            We combine creativity and technology to deliver a seamless fashion
+            experience. Whether you're looking for the latest trends, timeless
+            classics, or personalized recommendations, we help you explore and
+            express your style with confidence.
+          </p>
+        </motion.div>
+
+        {/* IMAGE SIDE */}
+        <motion.div
+          variants={slideLeft}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="hidden lg:flex items-center justify-center min-h-screen"
+        >
+          <img
+            src={NELSS}
+            alt="Fashion"
+            className="h-full object-cover"
+          />
+        </motion.div>
+      </div>
+
+      {/* ================= BOTTOM SECTION ================= */}
+      <div className="w-full bg-black/90 text-white py-20 px-6 lg:px-20">
+
+        {/* TITLE */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-semibold mb-4">
+            How Are We Different?
+          </h2>
+          <p className="italic tracking-wide">
+            There are hundreds of fashion designers in Nigeria. Here’s why we stand out.
+          </p>
+        </motion.div>
+
+        {/* CARDS */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+          {/* CARD 1 */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <img
+              src={BESPOKE}
+              alt="Bespoke"
+              width={50}
+              className="bg-white rounded-full p-2"
+            />
+
+            <h3 className="text-2xl font-semibold">
+              Bespoke Atelier
+            </h3>
+
+            <p>
+              We create unique outfits and custom alterations, from simple hems
+              to elegant evening gowns.
+            </p>
+
+            <ul className="list-disc ml-5 space-y-2">
+              <li>Professional alterations</li>
+              <li>Made-to-measure designs</li>
+              <li>Restoration services</li>
+            </ul>
+          </motion.div>
+
+          {/* CARD 2 */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-6"
+          >
+            <img
+              src={FABRICS}
+              alt="Fabrics"
+              width={50}
+              className="bg-white rounded-full p-2"
+            />
+
+            <h3 className="text-2xl font-semibold">
+              Premium Fabrics
+            </h3>
+
+            <p>
+              We craft our collections using high-quality natural fabrics sourced from Italy.
+            </p>
+
+            <ul className="list-disc ml-5 space-y-2">
+              <li>100% organic cotton</li>
+              <li>Suede and silk</li>
+              <li>Exclusive patterns</li>
+            </ul>
+          </motion.div>
+
+          {/* CARD 3 */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="space-y-6"
+          >
+            <img
+              src={UNIQUE}
+              alt="Unique"
+              width={50}
+              className="bg-white rounded-full p-2"
+            />
+
+            <h3 className="text-2xl font-semibold">
+              Unique Collections
+            </h3>
+
+            <p>
+              Each design is produced in limited quantity, ensuring exclusivity
+              and individuality.
+            </p>
+
+            <ul className="list-disc ml-5 space-y-2">
+              <li>Clothes, shoes & accessories</li>
+              <li>Street style & casual</li>
+              <li>Mix-and-match styling</li>
+            </ul>
+          </motion.div>
+
         </div>
-        
+      </div>
+
     </section>
-}
+  );
+};

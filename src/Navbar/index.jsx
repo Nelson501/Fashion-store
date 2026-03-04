@@ -1,49 +1,126 @@
 import { useEffect } from "react";
-import { MdMenu } from "react-icons/md";
-export const Navbar = ({isOpen, setIsOpen})=>{
-    useEffect(()=>{
-        document.body.style.overflow = isOpen? "hidden":"";
-    }, [isOpen])
+import { motion, AnimatePresence } from "framer-motion";
+import { MdMenu, MdClose } from "react-icons/md";
 
+export const Navbar = ({ isOpen, setIsOpen }) => {
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
-    return<nav className="flex flex-row top-0 fixed z-40 bg-black/95 border-b-2 backdrop-blur-sm border-slate-300 shawdow-lg w-full py-4 justify-between px-10">
-        <div className="flex flex-row text-center uppercase font-serif italic font-bold text-[20px]">
-            <a className="cursor-pointer" href="#home">Fashion<span className="ml-1 text-amber-900 font-bold">Home</span></a>
+  const links = ["Home", "About", "Gallery", "Services", "Contact"];
+
+  return (
+    <>
+      {/* ================= NAVBAR ================= */}
+      <motion.nav
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-md border-b border-gray-700 shadow-lg px-6 lg:px-12 py-4 flex items-center justify-between"
+      >
+
+        {/* Logo Animation */}
+        <motion.a
+          href="#home"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3 }}
+          whileHover={{ scale: 1.05 }}
+          className="uppercase font-serif italic font-bold text-xl tracking-wider"
+        >
+          Fashion<span className="text-red-600">Home</span>
+        </motion.a>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center space-x-8">
+
+          {links.map((link, i) => (
+            <motion.a
+              key={i}
+              href={`#${link.toLowerCase()}`}
+              whileHover={{ y: -4, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="relative text-gray-300 font-semibold cursor-pointer group"
+            >
+              {link}
+
+              {/* Animated underline */}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+            </motion.a>
+          ))}
+
         </div>
-        
-        {
-            !isOpen && <div onClick={() => setIsOpen((prev) => !prev)} className="flex absolute right-7 text-[2rem] items-center md:hidden z-40" >
-            <MdMenu />
-        </div>
-        }
-        
 
-        <div className=" flex items-center space-x-[20px] sm:space-x-[30px]">
-            <div className="hidden md:flex items-center space-x-[20px] sm:space-x-[30px]">
-                <a className="text-gray-300 hover:text-white hover:text-xl font-serif transition-all hover:translate-y-1 cursor-pointer font-bold text-lg hover:italic p-2 rounded-2xl" href="#home">
-                    Home
-                </a>
-                <a className="text-gray-300 hover:text-white hover:text-xl transition-all hover:translate-y-1 cursor-pointer font-bold font-serif hover:italic  p-2 rounded-2xl text-lg" href="#about">
-                    About
-                </a>
-                <a className="text-gray-300 hover:text-white hover:text-xl transition-all hover:translate-y-1 cursor-pointer font-bold font-serif hover:italic p-2 rounded-2xl text-lg" href="#gallery">
-                    Gallery
-                </a>
-                <a className="text-gray-300 hover:text-white hover:text-xl transition-all hover:translate-y-1 cursor-pointer font-bold font-serif hover:italic p-2 rounded-2xl text-lg" href="#services">
-                    Services
-                </a>
-                <a className="text-gray-300 hover:text-white hover:text-xl transition-all hover:translate-y-1 cursor-pointer font-bold font-serif hover:italic p-2 rounded-2xl text-lg" href="#contact">
-                    Contact
-                </a>
-            </div>
+        {/* Subscribe Button */}
+        <motion.div
+          className="hidden lg:block"
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <a
+            href="#subscribe"
+            className="bg-red-700 px-5 py-2 rounded-xl font-semibold transition hover:bg-red-600"
+          >
+            Subscribe
+          </a>
+        </motion.div>
 
-        </div>
-        <div className="hidden lg:flex relative right-10 items-center p-0 text-center">
-           <a className="bg-red-800 px-2 rounded-xl cursor-pointer hover:bg-red-700" href="#youtube">Subscribe</a>
-        </div>
+        {/* Mobile Toggle */}
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-3xl text-white z-50"
+          whileTap={{ scale: 0.85 }}
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {isOpen ? <MdClose /> : <MdMenu />}
+        </motion.button>
+      </motion.nav>
 
-    </nav>
-    
-    
-}
+      {/* ================= MOBILE MENU ================= */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.6 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black z-40"
+            />
 
+            {/* Slide Menu */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="fixed top-0 right-0 w-3/4 h-full bg-black z-50 flex flex-col items-center justify-center space-y-8 text-xl"
+            >
+              {links.map((link, i) => (
+                <motion.a
+                  key={i}
+                  href={`#${link.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  whileHover={{ x: 10 }}
+                  className="text-gray-300 hover:text-white transition"
+                >
+                  {link}
+                </motion.a>
+              ))}
+
+              <motion.a
+                href="#subscribe"
+                whileHover={{ scale: 1.1 }}
+                className="bg-red-700 px-6 py-3 rounded-xl font-semibold"
+              >
+                Subscribe
+              </motion.a>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};

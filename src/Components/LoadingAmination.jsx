@@ -1,39 +1,47 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-export const LoadingAmination = ({onComplete})=>{
-    const[text, setText] = useState("")
+export const LoadingAmination = ({ onComplete }) => {
+  const [text, setText] = useState("");
+  const fullText = "You Are Welcome To Nelson Dayo fashoin Home";
 
-    const fulltext = "You Are Welcome To My Website"
+  useEffect(() => {
+    let index = 0;
 
-    useEffect(() => {
-        let index = 0;
-        const interval = setInterval(() =>{
-            setText(fulltext.substring(0, index));
-            index++
+    const interval = setInterval(() => {
+      setText(fullText.substring(0, index + 1));
+      index++;
 
-            if(index >= fulltext.length){
-                clearInterval(interval)
-                setTimeout(()=>{onComplete()},1000);
-            }
-        }, 100)
+      if (index === fullText.length) {
+        clearInterval(interval);
 
-        return () => clearInterval(interval)
+        setTimeout(() => {
+          onComplete();
+        }, 1000);
+      }
+    }, 80);
 
-    }, [onComplete])
+    return () => clearInterval(interval);
+  }, [onComplete]);
 
+  return (
+    <div className="bg-black fixed inset-0 z-50 text-white flex flex-col items-center justify-center gap-8">
 
-    return <div className="bg-black fixed insert-0 z-50 text-white flex flex-col items-center justify-center gap-5">
-        <div className="w-[300px] h-[3px] bg-gray-800 rounded relative overflow-hidden">
-            <div className="w-[40%] h-full bg-blue-500 aminate-loading"></div>
-        </div>
+      {/* Top Progress Bar */}
+      <div className="w-[300px] h-[4px] bg-gray-800 rounded overflow-hidden">
+        <div className="h-full bg-blue-500 animate-pulse w-full"></div>
+      </div>
 
-        <div className="mb-4 text-2xl font-serif font-semibold" >
-            {text}
-            <span className="aminate-blink ml-1 text-2xl front-bold">&copy;</span>
-        </div>
+      {/* Typing Text */}
+      <div className="text-2xl md:text-3xl font-serif font-semibold text-center">
+        {text}
+        <span className="ml-1 animate-pulse">|</span>
+      </div>
 
-        <div className="w-[300px] h-[3px] bg-gray-800 rounded relative overflow-hidden">
-            <div className="w-[40%] h-full bg-blue-500 aminate-loading"></div>
-        </div>
+      {/* Bottom Progress Bar */}
+      <div className="w-[300px] h-[4px] bg-gray-800 rounded overflow-hidden">
+        <div className="h-full bg-blue-500 animate-pulse w-full"></div>
+      </div>
+
     </div>
-}
+  );
+};

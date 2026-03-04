@@ -1,96 +1,199 @@
-import CARD1 from '../assets/media/recycle.svg'
-import CARD2 from '../assets/media/user.svg'
-import CARD3 from '../assets/media/phone.svg'
+import { motion } from "framer-motion";
+import CARD1 from "../assets/media/recycle.svg";
+import CARD2 from "../assets/media/user.svg";
+import CARD3 from "../assets/media/phone.svg";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
 
-export const Services = ()=>{
-    
-    return <section
-    id="services"
-    className="flex flex-col justify-center items center bg-red-800">
-        <div className="flex flex-col justify-center items-center p-[4rem]">
-            <div className="flex flex-col justify-center items-center">
-                <p className="text-center text-3xl font-semibold font-serif pb-8">Fashion Home Services &copy;</p>
-                <p>We offer various clothing and shoes services for women and men in Nigeria</p>
-            </div>
-            <div className="grid grid-cols-1 lg:flex pt-10 gap-10 justify-center items-center">
-                <div className="flex flex-col items-start gap-8 bg-red-950 p-9 ">
-                    <h2 className="text-[1.5rem]">Any Kind of Alterations</h2>
-                    <p>Have you lost weight, and clothes just sag on you? Or do you want to give new life to old clothes? Or maybe you've bought a dress, but it doesn't fit a little ? We can make any kind of alterations, make the old thing look new and stylish, change the fit and cut, or simply hem your jeans.</p>
+const slideLeft = {
+  hidden: { opacity: 0, x: -80 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+};
 
-                    <p className="bg-red-800 p-4">Request a quote</p>
-                </div>
-                <div className="flex flex-col items-start gap-8 bg-red-950 p-9">
-                    <h2 className="text-[1.5rem]">Bespoke Tailoring</h2>
-                    <p>Do you want clothes that no one else will have? Or maybe you have a non-standard body shape? Come to our atelier, and together with the designers you can come up with a unique and comfortable style. Bespoke tailoring takes from 5 to 15 days, depending on the complexity of the work.</p>
+const slideRight = {
+  hidden: { opacity: 0, x: 80 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+};
 
-                    <p className="bg-red-800 p-4">Request a qoute</p>
-                </div>
-            </div>
-        </div>
-        <div className="flex flex-col bg-black/95 items-center min-h-screen">
-            <div className="flex flex-col gap-4 justify-center items-center p-10">
-                <h2 className="text-center text-2xl">How to Buy Fashion Home Clothes?</h2>
-                <p className="text-center text-md">We have a large showroom near the city center, and from April 1 the second Fashion Home boutique will open</p>
-            
-            </div>
-            <div className="grid grid-cols-1 lg:flex justify-center items-center p-[3rem] gap-12">
-                {/* fisrt card */}
-                <div className="flex flex-col justify-center items-center max-w-[25rem] text-white p-10 rounded-[20px] shadow-red-500 bg-black shadow-sm">
-                    <div className='flex justify-center items-center border-2 bg-red-800 rounded-[50%] w-[60px] border-black'><img className=' ' src={CARD3} alt="" width={50}/></div>
-                    <div className="flex flex-col justify-center items-center pt-8">
-                        <h2 className="text-center text-2xl font-mono pb-3">Contact Us</h2>
-                        <p className="text-center">If you want to order exclusive clothes or buy something from our collections, you need to make an appointment</p>
-                    </div>
-                </div>
-                {/* fisrt card */}
-                <div className="flex flex-col justify-center items-center max-w-[25rem] text-white p-10 rounded-[20px] shadow-red-500 bg-black shadow-sm">
-                    <div><img className='flex justify-center items-center border-2 bg-red-800 rounded-[50%] w-[60px]' src={CARD2} alt="" width={50}/></div>
-                    <div className="flex flex-col justify-center items-center pt-8">
-                        <h2 className="text-center text-2xl font-mono pb-3">Visit Us</h2>
-                        <p className="text-center">In a cozy studio, you can chat with the designer and come up with a unique design, try ready clothes and make measurements.</p>
-                    </div>
-                </div>
-                {/* fisrt card */}
-                <div className="flex flex-col justify-center items-center max-w-[25rem] text-white p-10 rounded-[20px] shadow-red-500 bg-black shadow-sm">
-                    <div className=''><img className='flex justify-center items-center border-2 bg-red-800 rounded-[50%] w-[60px]' src={CARD1} alt="" width={50}/></div>
-                    <div className="flex flex-col justify-center items-center pt-8">
-                        <h2 className="text-center text-2xl font-mono pb-3">Make a Purchase</h2>
-                        <p className="text-center">If you ordered bespoke tailoring, your order will be ready in 5-15 days. You may be asked to come for the fit check 1 to 2 times.</p>
-                    </div>
-                </div>
-                
-            </div>
-       
-        </div>
+export const Services = () => {
+  return (
+    <section id="services" className="flex flex-col bg-red-800 text-white">
 
-        {/* weekly schedule */}
-        <div className='flex flex-col justify-center items-center p-10'>
-            <div className='text-center pt-6'>
-                <h1 className='text-center text-2xl font-serif'>Fashion Home Online Available 24 Hours Everyday &copy;</h1>
-            </div>
+      {/* ================= SERVICES SECTION ================= */}
+      <div className="flex flex-col items-center p-10 lg:p-20">
 
-            <div className='flex flex-col justify-center items-center pt-[3rem] text-lg md:text-2xl space-y-6 pl-2'>
-                <h1 className='text-center font-mono'>Fashion Home Opening Hours</h1>
-                <div className='space-y-4'>
-                    <p className=''>
-                        <strong className='mr-4'>
-                            Mon - Fri:
-                        </strong>
-                        9:00 AM - 10:00 PM
-                    </p>
-                    <p>
-                        <strong className='mr-4'>Saturday:</strong>
-                        10 : 0 AM - 8: 00 PM
-                    </p>
-                    <p>
-                        <strong className='mr-4'>Sunday:</strong>
-                        Closed
-                    </p>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-semibold font-serif mb-4">
+            Fashion Home Services
+          </h2>
+          <p>
+            We offer premium clothing and footwear services for women and men in Nigeria.
+          </p>
+        </motion.div>
 
-                </div>
-            </div>
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl">
+
+          {/* Alterations */}
+          <motion.div
+            variants={slideLeft}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="bg-red-950 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-4">
+              Any Kind of Alterations
+            </h3>
+
+            <p className="mb-6">
+              Have you lost weight and your clothes no longer fit? Or do you want
+              to give new life to old outfits? We handle all types of alterations,
+              from resizing and reshaping to simple hemming.
+            </p>
+
+            <button className="bg-red-700 px-5 py-3 rounded-lg hover:bg-red-600 transition">
+              Request a Quote
+            </button>
+          </motion.div>
+
+          {/* Bespoke */}
+          <motion.div
+            variants={slideRight}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="bg-red-950 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-4">
+              Bespoke Tailoring
+            </h3>
+
+            <p className="mb-6">
+              Want clothing no one else will have? Our designers work with you
+              to create a unique and comfortable style. Bespoke tailoring takes
+              5–15 days depending on complexity.
+            </p>
+
+            <button className="bg-red-700 px-5 py-3 rounded-lg hover:bg-red-600 transition">
+              Request a Quote
+            </button>
+          </motion.div>
 
         </div>
+      </div>
+
+      {/* ================= HOW TO BUY SECTION ================= */}
+      <div className="bg-black/95 py-20 px-6 lg:px-20">
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-semibold mb-4">
+            How to Buy Fashion Home Clothes
+          </h2>
+          <p>
+            Visit our showroom near the city center or book an appointment for a personalized experience.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-12">
+
+          {/* Contact */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="bg-black p-10 rounded-2xl shadow-md hover:scale-105 transition duration-300 text-center"
+          >
+            <div className="flex justify-center mb-6">
+              <img src={CARD3} alt="Contact" className="bg-red-800 p-3 rounded-full w-14" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Contact Us</h3>
+            <p>
+              Book an appointment to order exclusive pieces or purchase from our collections.
+            </p>
+          </motion.div>
+
+          {/* Visit */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-black p-10 rounded-2xl shadow-md hover:scale-105 transition duration-300 text-center"
+          >
+            <div className="flex justify-center mb-6">
+              <img src={CARD2} alt="Visit" className="bg-red-800 p-3 rounded-full w-14" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Visit Us</h3>
+            <p>
+              Meet our designers, explore collections, try outfits, and take measurements.
+            </p>
+          </motion.div>
+
+          {/* Purchase */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="bg-black p-10 rounded-2xl shadow-md hover:scale-105 transition duration-300 text-center"
+          >
+            <div className="flex justify-center mb-6">
+              <img src={CARD1} alt="Purchase" className="bg-red-800 p-3 rounded-full w-14" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Make a Purchase</h3>
+            <p>
+              Bespoke orders are ready in 5–15 days. You may be invited for one or two fitting sessions.
+            </p>
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* ================= OPENING HOURS ================= */}
+      <div className="flex flex-col items-center py-16 px-6 text-black bg-white">
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h3 className="text-2xl font-serif mb-8">
+            Fashion Home Online — Available 24 Hours Daily
+          </h3>
+
+          <h4 className="font-mono text-xl mb-6">
+            Opening Hours
+          </h4>
+
+          <div className="space-y-4 text-lg">
+            <p><strong>Mon – Fri:</strong> 9:00 AM – 10:00 PM</p>
+            <p><strong>Saturday:</strong> 10:00 AM – 8:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+          </div>
+        </motion.div>
+
+      </div>
+
     </section>
-}
+  );
+};
